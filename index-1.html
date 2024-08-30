@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        *{
+    box-sizing: border-box;
+    font-family: 'Brush Script MT',cursive;
+    font-size: 25px;
+    scrollbar-width: none;
+}
+html,body{
+    margin:0;
+    padding:0;
+}
+.container{
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+section{
+    height:100vh;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+}
+.section:nth-child(1){
+    background: lavender;    
+}
+.section:nth-child(2){
+    background:rgba(45, 45, 165, 0.363);
+}
+.circle{
+    display: flex;
+    flex-direction: column;
+    button{
+        margin-top: 4px;
+        border-radius: 15px;
+        border:0.5px dashed rgba(45, 45, 165, 0.671);
+    }
+    button:hover{
+        cursor: pointer;
+        background: rgba(255, 250, 240, 0.479);
+        color: white;
+        border:none;
+        transition: .5s;
+
+    }
+}
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <section class="section">
+            <h1>Inject Name</h1>
+            <p class="jp"></p>
+        </section>
+        <section class="section">
+            <h1>Caculating Circumeference</h1>
+            <div class="circle">
+                <h2>Enter Radius</h2>
+                <input id="input" type="text"/>
+                <button id="Submit">Submit</button>
+                <h3 id="ans"></h3>
+            </div>
+
+        </section>        
+
+    </div>
+    <script>
+const name = document.querySelector('.jp');
+if(name){
+  name.textContent="Emma......😁🎸";
+  console.log('Yes');
+  
+}
+else{
+    console.log('Element not found');
+}
+// calculating circumference
+
+    // my variablesssssssss😶‍🌫️😶‍🌫️
+const PI = 3.14;
+let submit = document.getElementById('Submit');
+
+    
+
+submit.onclick = function (){
+  let radius = document.getElementById('input').value;
+  radius = Number(radius);
+  
+    // interpolation
+      if(!isNaN(radius) && radius>0){
+        let circumference = 2*PI*radius;    
+        let answer = document.getElementById('ans');
+         answer.textContent = `Circumference:${circumference}`;
+           }
+           else{
+            console.log("Failed: Invalid Input😒");
+            let answer = document.getElementById('ans');
+            answer.textContent = "Enter a valid number Nigga or else buy a calc 😒";
+        }
+        
+    
+};
+
+
+
+    </script>
+</body>
+</html>
